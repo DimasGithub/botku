@@ -1,0 +1,19 @@
+# fly.toml app configuration file generated for macd-trend-bot on 2025-06-14T16:04:59+07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'macd-trend-bot'
+primary_region = 'sin'
+
+[build]
+  dockerfile = 'Dockerfile'
+
+[env]
+  OPENAI_API_KEY = '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'
+  TELEGRAM_TOKEN = '7992561129:AAEWHHAumIHoBR2nna7JpwF7xZ9SPZ4NXJM'
+
+[[vm]]
+  memory = '512mb'
+  cpu_kind = 'shared'
+  cpus = 1
