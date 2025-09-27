@@ -6,3 +6,4 @@ OPENAI_API_KEY = "sk-proj-nlIyfAs_LZmJz10lPE7SlX66K76aj1Erzrql6c91krvzAJ3tToNudy
 WEBSOCKET_URL = "wss://wbs.mexc.com/ws"
 MAX_DATA = 100
 LOCK_FILE = "bot.lock"
+REST_KLINE_URL = "https://api.mexc.com/api/v3/klines"

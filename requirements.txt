@@ -5,3 +5,4 @@ websocket-client
 openai
 matplotlib
 apscheduler
+requests

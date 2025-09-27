@@ -23,7 +23,6 @@ def init_symbol_data(symbols):
             "macd_prev": None
         } for symbol in symbols
     }
-    print("intial symbol_data ", symbol_data)
 
 def on_message(ws, message):
     try:
@@ -38,9 +37,6 @@ def on_message(ws, message):
             return
 
         closes = symbol_data[symbol]["closes"]
-        # print("symbol data", symbol_data)
-        # print("symbol ", symbol)
-        # print("closes ", closes)
         closes.append(price)
 
         if len(closes) > 100:
@@ -83,8 +79,8 @@ def update_symbol_lists(new_symbols):
         else:
             KLINE_SYMBOLS.append(symbol.upper())
 
-    print("✅ DEAL_SYMBOLS:", DEAL_SYMBOLS)
-    print("✅ KLINE_SYMBOLS:", KLINE_SYMBOLS)
+    print("DEAL_SYMBOLS:", DEAL_SYMBOLS)
+    print("KLINE_SYMBOLS:", KLINE_SYMBOLS)
 
 
 def on_error(ws, error):
