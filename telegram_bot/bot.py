@@ -90,20 +90,3 @@ async def dailyreport(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_photo(photo=image, caption=f"📈 {symbol} Daily Report:\n{summary}")
         else:
             await update.message.reply_text(f"Not enough data to generate daily report for {symbol}.")
-
-async def run_telegram_bot():
-    app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
-
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("stop", stop))
-    app.add_handler(CommandHandler("symbol", symbol))
-    app.add_handler(CommandHandler("summary", summary))
-    app.add_handler(CommandHandler("status", status))
-    app.add_handler(CommandHandler("chart", chart))
-    app.add_handler(CommandHandler("dailyreport", dailyreport))
-
-    set_kline_symbols(current_symbols)
-    init_symbol_data(current_symbols)
-    start_websocket(send_telegram_error_message)
-
-    await app.run_polling()
